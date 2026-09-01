@@ -1,0 +1,10 @@
+.next
+node_modules
+dist
+out
+.env
+.env*.local
+bun.lockb
+*.tsbuildinfo
+.edge-profile*
+preview-*.png
