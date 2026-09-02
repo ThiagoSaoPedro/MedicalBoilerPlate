@@ -12,14 +12,16 @@ const locations = [
       "https://www.google.com/maps?q=Cl%C3%ADnica%20Integratto%20Rua%20Esp%C3%ADrito%20Santo%201273%20Centro%20Fernand%C3%B3polis%20SP&output=embed",
   },
   {
-    clinic: "Clínica Integratto",
-    streetAddress: "Rua Pernambuco, 3341, Vila Redentora",
+    clinic: "Atendimentos em São José do Rio Preto",
+    streetAddress: "Rua Pernambuco, 3341. Redentora.",
     city: "São José do Rio Preto - SP",
-    postalCode: "CEP 15015-770",
+    postalCode: "",
+    phone: "(17) 3232 0177",
+    whatsapp: "(17) 99771 2522",
     mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Integratto%20Rua%20Pernambuco%203341%20Vila%20Redentora%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20SP",
+      "https://www.google.com/maps/search/?api=1&query=Rua%20Pernambuco%203341%20Redentora%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20SP",
     mapEmbedUrl:
-      "https://www.google.com/maps?q=Cl%C3%ADnica%20Integratto%20Rua%20Pernambuco%203341%20Vila%20Redentora%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20SP&output=embed",
+      "https://www.google.com/maps?q=Rua%20Pernambuco%203341%20Redentora%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20SP&output=embed",
   },
 ] as const;
 

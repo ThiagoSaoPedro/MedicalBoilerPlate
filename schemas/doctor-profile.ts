@@ -32,6 +32,8 @@ export type ProfileAddress = {
   streetAddress: string;
   city: string;
   postalCode: string;
+  phone?: string;
+  whatsapp?: string;
   mapUrl: string;
   mapEmbedUrl: string;
 };

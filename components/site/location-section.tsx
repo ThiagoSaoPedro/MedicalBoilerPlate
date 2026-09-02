@@ -1,4 +1,4 @@
-import { ArrowUpRight, Building2, MapPin } from "lucide-react";
+import { ArrowUpRight, Building2, MapPin, MessageCircle, Phone } from "lucide-react";
 import type { DoctorProfile } from "@/schemas/doctor-profile";
 import { SectionShell } from "./section-shell";
 
@@ -39,10 +39,47 @@ export function LocationSection({ profile }: LocationSectionProps) {
                 />
                 <p className="text-pretty text-base leading-8">
                   {location.streetAddress}
-                  <br />
-                  {location.postalCode}
+                  {location.postalCode ? (
+                    <>
+                      <br />
+                      {location.postalCode}
+                    </>
+                  ) : null}
                 </p>
               </div>
+
+              {location.phone || location.whatsapp ? (
+                <div className="mt-6 grid gap-3 border-t border-[#ead7bd]/12 pt-6 text-sm text-[#c9b7a3]">
+                  {location.phone ? (
+                    <a
+                      className="flex items-center gap-3 transition hover:text-[var(--profile-accent)]"
+                      href={`tel:${location.phone.replace(/\D/g, "")}`}
+                    >
+                      <Phone
+                        aria-hidden="true"
+                        className="text-[var(--profile-gold)]"
+                        size={18}
+                      />
+                      <span>Tel: {location.phone}</span>
+                    </a>
+                  ) : null}
+                  {location.whatsapp ? (
+                    <a
+                      className="flex items-center gap-3 transition hover:text-[var(--profile-accent)]"
+                      href={`https://wa.me/55${location.whatsapp.replace(/\D/g, "")}`}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <MessageCircle
+                        aria-hidden="true"
+                        className="text-[var(--profile-gold)]"
+                        size={18}
+                      />
+                      <span>WhatsApp: {location.whatsapp}</span>
+                    </a>
+                  ) : null}
+                </div>
+              ) : null}
 
               <a
                 className="interactive-soft mt-8 inline-flex min-h-12 w-fit items-center justify-center gap-2 bg-[var(--profile-accent)] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#14110f]"
