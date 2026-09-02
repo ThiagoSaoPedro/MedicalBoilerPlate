@@ -24,24 +24,24 @@ export function SectionShell({
   return (
     <section
       aria-labelledby={titleId}
-      className={cn("scroll-mt-24 px-5 py-20 sm:px-8 lg:px-10", className)}
+      className={cn("scroll-mt-24 px-5 py-24 sm:px-8 lg:px-10", className)}
       id={id}
     >
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           {eyebrow ? (
-            <p className="mb-4 text-sm font-semibold uppercase text-[var(--profile-accent)]">
+            <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[var(--profile-accent)]">
               {eyebrow}
             </p>
           ) : null}
           <h2
-            className="text-balance font-serif text-3xl text-[var(--profile-foreground)] sm:text-4xl lg:text-5xl"
+            className="editorial-title text-balance text-4xl text-current sm:text-5xl lg:text-7xl"
             id={titleId}
           >
             {title}
           </h2>
           {description ? (
-            <p className="mt-5 max-w-2xl text-pretty text-base leading-8 text-muted-foreground sm:text-lg">
+            <p className="mt-6 max-w-2xl text-pretty text-base leading-8 text-current/70 sm:text-lg">
               {description}
             </p>
           ) : null}

@@ -12,12 +12,9 @@ export function SiteFooter({ profile }: SiteFooterProps) {
         <div>
           <p className="font-serif text-xl text-foreground">{profile.professionalName}</p>
           <p className="mt-2">
-            {profile.crm} · {profile.city}
+            {profile.specialty} · {profile.crm} · {profile.rqe}
           </p>
-          <p className="mt-1">
-            {profile.address.clinic} · {profile.address.streetAddress},{" "}
-            {profile.address.city}
-          </p>
+          <p className="mt-1">Atendimento presencial em {profile.city}</p>
         </div>
         <a
           aria-label={`Abrir Instagram oficial de ${profile.shortName}`}

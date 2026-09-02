@@ -1,57 +1,70 @@
 import type { DoctorProfile } from "@/schemas/doctor-profile";
 
+const locations = [
+  {
+    clinic: "Clínica Integratto",
+    streetAddress: "Rua Espírito Santo, 1273, Centro",
+    city: "Fernandópolis - SP",
+    postalCode: "CEP 15600-046",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Integratto%20Rua%20Esp%C3%ADrito%20Santo%201273%20Centro%20Fernand%C3%B3polis%20SP",
+    mapEmbedUrl:
+      "https://www.google.com/maps?q=Cl%C3%ADnica%20Integratto%20Rua%20Esp%C3%ADrito%20Santo%201273%20Centro%20Fernand%C3%B3polis%20SP&output=embed",
+  },
+  {
+    clinic: "Clínica Integratto",
+    streetAddress: "Rua Pernambuco, 3341, Vila Redentora",
+    city: "São José do Rio Preto - SP",
+    postalCode: "CEP 15015-770",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Integratto%20Rua%20Pernambuco%203341%20Vila%20Redentora%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20SP",
+    mapEmbedUrl:
+      "https://www.google.com/maps?q=Cl%C3%ADnica%20Integratto%20Rua%20Pernambuco%203341%20Vila%20Redentora%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20SP&output=embed",
+  },
+] as const;
+
 export const doctorProfile: DoctorProfile = {
-  professionalName: "Dra. Vitória Ruvieri Silveira",
-  shortName: "Dra. Vitória",
-  crm: "CRM-SP 202273",
-  city: "Fernandópolis, SP",
-  // Validar com a cliente antes da publicação final. Não publicar RQE sem confirmação formal.
-  specialty: "Dermatologia e Medicina Capilar",
-  specialtyValidationNote:
-    "Validar especialidade, RQE e forma de apresentação profissional com a cliente antes da publicação.",
-  tagline:
-    "Diagnóstico preciso e cuidado personalizado para a saúde da pele e dos cabelos.",
-  institutionalCall:
-    "Cuidado médico com escuta, embasamento científico e tecnologias atuais em Fernandópolis.",
+  professionalName: "Dra. Flávia Maia",
+  shortName: "Dra. Flávia Maia",
+  crm: "CRM-SP 206251",
+  rqe: "RQE 135687",
+  city: "Fernandópolis e São José do Rio Preto, SP",
+  specialty: "Reumatologia",
+  specialtyValidationNote: "",
+  tagline: "Medicina com ciência e escuta para quem convive com dor.",
+  institutionalCall: "Medicina com ciência e escuta para quem convive com dor.",
   approvedBaseText:
-    "Diagnóstico preciso. Tratamentos personalizados, embasamento científico, medicina regenerativa. Resultados que transformam. Devolvendo autoestima através da saúde dos seus cabelos. Tecnologias e tudo de mais inovador você encontra aqui!",
+    "Uma avaliação individualizada ajuda a compreender a dor, a funcionalidade, a rotina e os sinais clínicos antes de definir caminhos de cuidado.",
   biography: [
-    "Atendimento voltado para dermatologia e medicina capilar, com avaliação individualizada e uma condução cuidadosa de cada queixa.",
-    "A proposta é unir escuta, ciência e tecnologia para orientar escolhas terapêuticas com clareza, segurança e respeito ao tempo de cada paciente.",
+    "A atuação em reumatologia exige tempo para escutar, investigar e conectar sintomas que muitas vezes atravessam a vida diária por meses ou anos.",
+    "A proposta do atendimento é unir ciência, comunicação clara e acompanhamento cuidadoso para pessoas que convivem com dor crônica, fadiga e doenças reumatológicas.",
   ],
   photo: {
-    src: "/images/dra-vitoria-ruvieri.jpg",
-    alt: "Retrato profissional da Dra. Vitória Ruvieri Silveira",
-    fallbackInitials: "VR",
+    src: "/images/flaviamaia.png",
+    alt: "Retrato profissional da Dra. Flávia Maia",
+    fallbackInitials: "FM",
   },
   colors: {
-    background: "#fbf7f2",
-    foreground: "#2c2523",
-    accent: "#8f4657",
-    accentSoft: "#ead0d2",
-    detail: "#6f7e71",
+    background: "#11100f",
+    foreground: "#f7f1e8",
+    accent: "#c99a68",
+    accentSoft: "#ead7bd",
+    detail: "#b89156",
+    gold: "#d2ad72",
   },
-  address: {
-    clinic: "Clínica CEI",
-    streetAddress: "Rua Sergipe, 908, Sala 3, Centro",
-    city: "Fernandópolis - SP",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Rua%20Sergipe%2C%20908%2C%20Sala%203%2C%20Centro%2C%20Fernand%C3%B3polis%20-%20SP",
-    mapEmbedUrl:
-      "https://www.google.com/maps?q=Rua%20Sergipe%2C%20908%2C%20Sala%203%2C%20Centro%2C%20Fernand%C3%B3polis%20-%20SP&output=embed",
-  },
+  address: locations[0],
+  locations,
   availability: {
-    whatsappCommercialAvailability: "24 horas, todos os dias",
-    displayText:
-      "O canal comercial foi informado como disponível 24 horas, todos os dias.",
-    note: "O número de WhatsApp deve ser inserido somente após confirmação final.",
+    whatsappCommercialAvailability: "",
+    displayText: "",
+    note: "Telefone e WhatsApp devem ser inseridos somente após confirmação final.",
   },
   contact: {
-    instagramUrl: "https://www.instagram.com/dravitoriaruvieri/",
+    instagramUrl: "https://www.instagram.com/dra.flaviamaia/",
     whatsappNumber: "",
     email: "",
     schedulingUrl:
-      "https://api.whatsapp.com/send?phone=5517997843429&text=Ol%C3%A1%2C%20vim%20do%20Instagram%20e%20gostaria%20de%20agendar%20uma%20consulta.%20",
+      "https://l.instagram.com/?u=https%3A%2F%2Fwww.doctoralia.com.br%2Fflavia-maia%2Freumatologista%2Ffernandopolis%3Fsaasonly%3Dtrue%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAadukMILm6fjmoBIiA1lnJ1iLecJ0eLEVpC8JTx8sNuXTzlhqrUh7F6SmM1_IA_aem_SuweIHaHdDRoodHuEPc94g&e=AUC2zVkX5STeFWS4T5GCbMJ5E5UIjX8_caMB-JaW-WOCmtj0iF-swCDcxg8X-P7OYcDSIRKWEW3uvs8KFDUWzbxAfc7oHsKp0JbkZpzVOlilXsLAhZ-iZ8rgyGE7EkA9PLSrsV81TBEDBmmbUpC7Q5Y",
   },
   officeHours: {
     publicLabel: "",
@@ -59,64 +72,104 @@ export const doctorProfile: DoctorProfile = {
     showOnSite: false,
   },
   care: {
-    eyebrow: "Um cuidado individualizado",
-    title: "Avaliação atenta para escolhas mais precisas.",
+    eyebrow: "Cuidado que começa pela escuta",
+    title: "Uma avaliação individualizada para compreender a dor em contexto.",
     description:
-      "A jornada começa pela compreensão da história, das queixas e dos objetivos de cada pessoa.",
+      "Dor, fadiga e doenças autoimunes pedem uma escuta clínica atenta, capaz de considerar história, exames, rotina, funcionalidade e impacto emocional.",
     paragraphs: [
-      "O texto-base aprovado aponta uma prática guiada por diagnóstico preciso, tratamentos personalizados, embasamento científico e uso criterioso de tecnologias.",
-      "Na comunicação do site, essa mensagem foi construída sem prometer desfechos clínicos: o foco está em cuidado, orientação médica, autoestima e saúde dos cabelos.",
+      "Na consulta reumatológica, a investigação começa pelo modo como os sintomas aparecem, evoluem e interferem no movimento, no descanso e nas atividades de cada pessoa.",
+      "Esse olhar individualizado permite organizar hipóteses, orientar exames quando necessários e construir uma condução médica coerente com cada quadro.",
+      "A comunicação é pensada para trazer clareza, sem promessas simplistas, respeitando a complexidade de condições crônicas e autoimunes.",
     ],
   },
   visualHealth: {
-    eyebrow: "Pele e saúde capilar",
-    title: "Tecnologia e ciência a favor de um cuidado mais claro.",
+    eyebrow: "Percurso clínico",
+    title: "Ciência, vínculo e acompanhamento com serenidade.",
     description:
-      "Uma apresentação visual leve, sem imagens invasivas, para reforçar investigação, prevenção e acompanhamento.",
+      "A identidade visual evita imagens invasivas e traduz o cuidado reumatológico por formas orgânicas, linhas suaves e uma atmosfera de alívio.",
     image: {
-      src: "/images/foto.jpg",
-      alt: "Dra. Vitória durante procedimento de cuidado capilar em consultório",
-      fallbackInitials: "VR",
+      src: "/images/dra-flavia-maia-placeholder.svg",
+      alt: "Arte abstrata com curvas orgânicas inspiradas em movimento articular",
+      fallbackInitials: "FM",
     },
     topics: [
       {
         label: "01",
-        title: "Investigação",
+        title: "Escuta",
         description:
-          "Leitura cuidadosa dos sinais da pele e do couro cabeludo antes de qualquer conduta.",
+          "Compreensão da história, dos sintomas e do impacto da dor na rotina.",
       },
       {
         label: "02",
-        title: "Personalização",
+        title: "Investigação",
         description:
-          "Planejamento ajustado à história, rotina e necessidades apresentadas em consulta.",
+          "Avaliação clínica criteriosa para orientar hipóteses e próximos passos.",
       },
       {
         label: "03",
-        title: "Acompanhamento",
+        title: "Continuidade",
         description:
-          "Orientação contínua para decisões mais seguras ao longo do tratamento médico.",
+          "Acompanhamento pensado para quadros crônicos, autoimunes e funcionais.",
       },
+    ],
+  },
+  careAreas: [
+    {
+      title: "Dor crônica",
+      description:
+        "Avaliação de sintomas persistentes, limitações funcionais e fatores associados.",
+    },
+    {
+      title: "Fibromialgia e fadiga crônica",
+      description:
+        "Cuidado atento a dor difusa, cansaço persistente, sono e qualidade de vida.",
+    },
+    {
+      title: "Artrose",
+      description:
+        "Acompanhamento de dor articular, rigidez e impacto nas atividades diárias.",
+    },
+    {
+      title: "Artrite reumatoide",
+      description:
+        "Investigação e seguimento de inflamação articular e manifestações sistêmicas.",
+    },
+    {
+      title: "Doenças autoimunes",
+      description:
+        "Avaliação de condições reumatológicas autoimunes com abordagem criteriosa.",
+    },
+  ],
+  credentials: {
+    education: [
+      "Médica pelo Centro Universitário de Votuporanga.",
+      "Clínica Médica pela Santa Casa de Misericórdia de São Carlos.",
+      "Reumatologista pelo Hospital de Base de São José do Rio Preto/FAMERP.",
+    ],
+    experience: [
+      "Hospital de Base de São José do Rio Preto.",
+      "Médica assistente do CEDMAC no Hospital de Base.",
+      "Ambulatório de Especialidades em Fernandópolis e Votuporanga.",
     ],
   },
   differentials: [
     {
       icon: "heartPulse",
-      title: "Cuidado individualizado",
+      title: "Escuta clínica",
       description:
-        "Escuta, avaliação e comunicação pensadas para acolher a história de cada paciente.",
+        "Tempo e atenção para compreender sintomas, rotina e necessidades reais.",
     },
     {
       icon: "microscope",
-      title: "Embasamento científico",
+      title: "Confiança científica",
       description:
-        "Condutas orientadas por critérios médicos, evidências e atualização profissional.",
+        "Condutas orientadas por avaliação médica, evidências e formação especializada.",
     },
     {
       icon: "sparkles",
-      title: "Tecnologia com propósito",
+      title: "Cuidado humano",
       description:
-        "Recursos e abordagens atuais usados de forma criteriosa, conforme indicação médica.",
+        "Comunicação clara e acolhedora para lidar com condições complexas sem pressa.",
     },
   ],
   services: [],

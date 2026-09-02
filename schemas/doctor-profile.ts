@@ -24,12 +24,14 @@ export type ProfileColors = {
   accent: string;
   accentSoft: string;
   detail: string;
+  gold: string;
 };
 
 export type ProfileAddress = {
   clinic: string;
   streetAddress: string;
   city: string;
+  postalCode: string;
   mapUrl: string;
   mapEmbedUrl: string;
 };
@@ -83,6 +85,7 @@ export type DoctorProfile = {
   professionalName: string;
   shortName: string;
   crm: string;
+  rqe: string;
   city: string;
   specialty: string;
   specialtyValidationNote: string;
@@ -93,6 +96,7 @@ export type DoctorProfile = {
   photo: ProfilePhoto;
   colors: ProfileColors;
   address: ProfileAddress;
+  locations: readonly ProfileAddress[];
   availability: ProfileAvailability;
   contact: ProfileContact;
   officeHours: ProfileOfficeHours;
@@ -108,6 +112,11 @@ export type DoctorProfile = {
     description: string;
     image: ProfilePhoto;
     topics: readonly ProfileVisualTopic[];
+  };
+  careAreas: readonly ProfileListItem[];
+  credentials: {
+    education: readonly string[];
+    experience: readonly string[];
   };
   differentials: readonly ProfileDifferential[];
   services: readonly ProfileListItem[];

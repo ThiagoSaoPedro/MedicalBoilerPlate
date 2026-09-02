@@ -1,8 +1,7 @@
 # Boilerplate Médico Institucional
 
 Site institucional em Next.js, TypeScript, Tailwind CSS e Bun, preparado para
-apresentação comercial da Dra. Vitória Ruvieri Silveira e estruturado para ser
-duplicado para outros médicos.
+propostas comerciais de médicos com identidade, conteúdo e dados centralizados.
 
 ## Como rodar
 
@@ -49,11 +48,37 @@ data/doctor-profile.ts
 ```
 
 Esse arquivo concentra nome, CRM, posicionamento, biografia, foto, cores,
-endereço, mapa, disponibilidade, contatos, Instagram, serviços, diferenciais,
-depoimentos, FAQ e flags de exibição das seções.
+endereços, mapas, disponibilidade, contatos, Instagram, áreas de cuidado,
+credenciais, serviços, diferenciais, depoimentos, FAQ e flags de exibição das
+seções.
 
 Campos ainda não confirmados devem ficar vazios. As seções dependentes desses
 campos ficam ocultas automaticamente.
+
+## Como trocar entre identidades
+
+Cada proposta deve viver em sua própria branch, mantendo a mesma arquitetura de
+componentes e alterando principalmente `data/doctor-profile.ts`, assets em
+`public/images` e pequenos ajustes visuais quando necessário.
+
+Para voltar à proposta da Dra. Vitória:
+
+```bash
+git switch main
+```
+
+Ou use a branch correspondente caso ela tenha outro nome no repositório.
+
+Para trabalhar na proposta da Dra. Flávia Maia:
+
+```bash
+git switch dra-flavia-maia
+```
+
+A branch `dra-flavia-maia` contém a identidade de reumatologia, com paleta em
+azul-petróleo, verde-sálvia, areia/off-white e cobre discreto. Como ainda não há
+foto autorizada, o site usa um placeholder abstrato em
+`public/images/dra-flavia-maia-placeholder.svg`.
 
 ## Como duplicar para outro médico
 

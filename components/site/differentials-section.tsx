@@ -15,25 +15,28 @@ type DifferentialsSectionProps = {
 export function DifferentialsSection({ profile }: DifferentialsSectionProps) {
   return (
     <SectionShell
+      className="bg-[#ead7bd] text-[#14110f]"
       description="Pontos iniciais de posicionamento, mantidos em dados editáveis para revisão comercial e médica."
       eyebrow="Diferenciais"
       id="diferenciais"
       title="Uma experiência médica construída com critério."
     >
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-px overflow-hidden border border-[#14110f]/16 bg-[#14110f]/16 md:grid-cols-3">
         {profile.differentials.map((item) => {
           const Icon = icons[item.icon];
 
           return (
             <article
-              className="rounded-lg border border-border bg-card p-6 shadow-sm"
+              className="interactive-soft bg-[#ead7bd] p-7 hover:bg-[#f7f1e8]"
               key={item.title}
             >
-              <div className="mb-6 inline-flex size-12 items-center justify-center rounded-lg bg-accent-soft text-[var(--profile-accent)]">
+              <div className="mb-8 inline-flex size-12 items-center justify-center border border-[#14110f]/22 text-[#8a5d35]">
                 <Icon aria-hidden="true" size={22} />
               </div>
-              <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
-              <p className="mt-4 text-pretty text-sm leading-7 text-muted-foreground">
+              <h3 className="text-xl font-bold uppercase tracking-[0.08em] text-[#14110f]">
+                {item.title}
+              </h3>
+              <p className="mt-4 text-pretty text-sm leading-7 text-[#5a5148]">
                 {item.description}
               </p>
             </article>

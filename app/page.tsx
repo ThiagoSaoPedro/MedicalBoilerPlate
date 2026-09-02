@@ -1,6 +1,8 @@
 import type { CSSProperties } from "react";
 import { AvailabilitySection } from "@/components/site/availability-section";
+import { CareAreasSection } from "@/components/site/care-areas-section";
 import { CareSection } from "@/components/site/care-section";
+import { CredentialsSection } from "@/components/site/credentials-section";
 import { DifferentialsSection } from "@/components/site/differentials-section";
 import { FinalCtaSection } from "@/components/site/final-cta-section";
 import { SiteFooter } from "@/components/site/footer";
@@ -20,14 +22,20 @@ const navigation = [
   { label: "Início", href: "#inicio", visible: doctorProfile.sections.hero },
   { label: "Cuidado", href: "#cuidado", visible: doctorProfile.sections.care },
   {
-    label: "Diferenciais",
-    href: "#diferenciais",
-    visible:
-      doctorProfile.sections.differentials && hasItems(doctorProfile.differentials),
+    label: "Áreas",
+    href: "#areas-de-cuidado",
+    visible: doctorProfile.careAreas.length > 0,
   },
   {
-    label: "Onde atender",
-    href: "#onde-atender",
+    label: "Credenciais",
+    href: "#credenciais",
+    visible:
+      doctorProfile.credentials.education.length > 0 ||
+      doctorProfile.credentials.experience.length > 0,
+  },
+  {
+    label: "Onde atendo",
+    href: "#onde-atendo",
     visible: doctorProfile.sections.location,
   },
   {
@@ -45,6 +53,7 @@ const profileTheme = {
   "--profile-accent": doctorProfile.colors.accent,
   "--profile-accent-soft": doctorProfile.colors.accentSoft,
   "--profile-detail": doctorProfile.colors.detail,
+  "--profile-gold": doctorProfile.colors.gold,
 } as CSSProperties;
 
 export default function Home() {
@@ -65,8 +74,15 @@ export default function Home() {
       <main>
         {doctorProfile.sections.hero ? <HeroSection profile={doctorProfile} /> : null}
         {doctorProfile.sections.care ? <CareSection profile={doctorProfile} /> : null}
+        {doctorProfile.careAreas.length > 0 ? (
+          <CareAreasSection profile={doctorProfile} />
+        ) : null}
         {doctorProfile.sections.visualHealth ? (
           <VisualHealthSection profile={doctorProfile} />
+        ) : null}
+        {doctorProfile.credentials.education.length > 0 ||
+        doctorProfile.credentials.experience.length > 0 ? (
+          <CredentialsSection profile={doctorProfile} />
         ) : null}
         {doctorProfile.sections.differentials && hasItems(doctorProfile.differentials) ? (
           <DifferentialsSection profile={doctorProfile} />
