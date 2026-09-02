@@ -32,11 +32,11 @@ export function SiteHeader({ profile, navigation }: SiteHeaderProps) {
           onClick={() => setIsOpen(false)}
         >
           <Monogram className="size-10 shrink-0 bg-[#191716]" />
-          <span className="min-w-0">
+          <span className="hidden min-w-0 sm:block">
             <span className="block truncate font-serif text-lg font-medium leading-none text-[#f7f1e8] sm:text-2xl">
               {profile.shortName}
             </span>
-            <span className="mt-1 block text-xs font-semibold uppercase tracking-[0.16em] text-[#c9b7a3]">
+            <span className="mt-1 hidden text-xs font-semibold uppercase tracking-[0.16em] text-[#c9b7a3] sm:block">
               {profile.specialty}
             </span>
           </span>
