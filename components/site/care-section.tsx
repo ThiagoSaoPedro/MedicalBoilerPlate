@@ -3,11 +3,13 @@ import { SectionShell } from "./section-shell";
 
 type CareSectionProps = {
   profile: DoctorProfile;
+  className?: string;
 };
 
-export function CareSection({ profile }: CareSectionProps) {
+export function CareSection({ profile, className }: CareSectionProps) {
   return (
     <SectionShell
+      className={className}
       description={profile.care.description}
       eyebrow={profile.care.eyebrow}
       id="cuidado"

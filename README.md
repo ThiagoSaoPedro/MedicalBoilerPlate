@@ -1,8 +1,7 @@
 # Boilerplate Médico Institucional
 
-Site institucional em Next.js, TypeScript, Tailwind CSS e Bun, preparado para
-apresentação comercial da Dra. Vitória Ruvieri Silveira e estruturado para ser
-duplicado para outros médicos.
+Site institucional em Next.js, TypeScript, Tailwind CSS e Bun, preparado para ser
+duplicado e personalizado para profissionais médicos.
 
 ## Como rodar
 
@@ -42,20 +41,20 @@ bun run build
 
 ## Onde trocar os dados
 
-Todas as informações editáveis da médica ficam em:
+Todas as informações editáveis ficam em:
 
 ```text
 data/doctor-profile.ts
 ```
 
-Esse arquivo concentra nome, CRM, posicionamento, biografia, foto, cores,
-endereço, mapa, disponibilidade, contatos, Instagram, serviços, diferenciais,
+Esse arquivo concentra nome profissional, CRM, posicionamento, biografia, foto,
+cores, endereço, mapa, disponibilidade, contatos, serviços, diferenciais,
 depoimentos, FAQ e flags de exibição das seções.
 
 Campos ainda não confirmados devem ficar vazios. As seções dependentes desses
 campos ficam ocultas automaticamente.
 
-## Como duplicar para outro médico
+## Como duplicar
 
 1. Duplique este diretório.
 2. Troque os dados em `data/doctor-profile.ts`.

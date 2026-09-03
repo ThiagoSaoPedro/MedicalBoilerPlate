@@ -5,17 +5,19 @@ import { SectionShell } from "./section-shell";
 
 type AvailabilitySectionProps = {
   profile: DoctorProfile;
+  className?: string;
 };
 
-export function AvailabilitySection({ profile }: AvailabilitySectionProps) {
+export function AvailabilitySection({ profile, className }: AvailabilitySectionProps) {
   const hasWhatsapp = hasContent(profile.contact.whatsappNumber);
 
   return (
     <SectionShell
-      description="A seção já está preparada para receber os contatos comerciais confirmados antes da publicação."
+      className={className}
+      description="Contato para agendamento, retornos e informações administrativas."
       eyebrow="Disponibilidade"
       id="disponibilidade"
-      title="Canal comercial configurável sem expor dados pendentes."
+      title="Atendimento com hora marcada e retorno organizado."
     >
       <div className="grid gap-5 md:grid-cols-2">
         <article className="rounded-lg border border-border bg-card p-6">
@@ -39,7 +41,7 @@ export function AvailabilitySection({ profile }: AvailabilitySectionProps) {
           </h3>
           <p className="mt-3 text-pretty text-sm leading-7 text-muted-foreground">
             {hasWhatsapp
-              ? "O botão comercial será exibido automaticamente com o número informado."
+              ? "Use o canal comercial para solicitar horários disponíveis e orientações administrativas."
               : profile.availability.note}
           </p>
         </article>

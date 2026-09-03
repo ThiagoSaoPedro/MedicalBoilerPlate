@@ -20,20 +20,30 @@ const navigation = [
   { label: "Início", href: "#inicio", visible: doctorProfile.sections.hero },
   { label: "Cuidado", href: "#cuidado", visible: doctorProfile.sections.care },
   {
+    label: "Prevenção",
+    href: "#saude-do-coracao",
+    visible: doctorProfile.sections.visualHealth,
+  },
+  {
     label: "Diferenciais",
     href: "#diferenciais",
     visible:
       doctorProfile.sections.differentials && hasItems(doctorProfile.differentials),
   },
   {
-    label: "Onde atender",
+    label: "Serviços",
+    href: "#servicos",
+    visible: doctorProfile.sections.services && hasItems(doctorProfile.services),
+  },
+  {
+    label: "Localização",
     href: "#onde-atender",
     visible: doctorProfile.sections.location,
   },
   {
-    label: "Disponibilidade",
-    href: "#disponibilidade",
-    visible: doctorProfile.sections.availability,
+    label: "FAQ",
+    href: "#faq",
+    visible: doctorProfile.sections.faq && hasItems(doctorProfile.faq),
   },
 ]
   .filter((item) => item.visible)
@@ -71,13 +81,13 @@ export default function Home() {
         {doctorProfile.sections.differentials && hasItems(doctorProfile.differentials) ? (
           <DifferentialsSection profile={doctorProfile} />
         ) : null}
+        {showServices ? <ServicesSection profile={doctorProfile} /> : null}
         {doctorProfile.sections.location ? (
           <LocationSection profile={doctorProfile} />
         ) : null}
         {doctorProfile.sections.availability ? (
           <AvailabilitySection profile={doctorProfile} />
         ) : null}
-        {showServices ? <ServicesSection profile={doctorProfile} /> : null}
         {showTestimonials ? <TestimonialsSection profile={doctorProfile} /> : null}
         {showFaq ? <FaqSection profile={doctorProfile} /> : null}
         {showFinalCta ? <FinalCtaSection profile={doctorProfile} /> : null}

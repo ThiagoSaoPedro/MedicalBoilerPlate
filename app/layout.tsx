@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     template: `%s | ${doctorProfile.shortName}`,
   },
   description: doctorProfile.tagline,
-  applicationName: doctorProfile.professionalName,
-  authors: [{ name: doctorProfile.professionalName }],
+  applicationName: "Boilerplate Médico Institucional",
+  authors: [{ name: "Boilerplate Médico Institucional" }],
   openGraph: {
     title: pageTitle,
     description: doctorProfile.tagline,

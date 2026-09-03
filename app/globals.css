@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fbf7f2;
-  --foreground: #2c2523;
-  --card: #fffdf9;
-  --card-foreground: #2c2523;
-  --muted: #f1e8df;
-  --muted-foreground: #736760;
-  --border: #e3d5ca;
-  --accent: #8f4657;
-  --accent-foreground: #fffdf9;
-  --accent-soft: #ead0d2;
-  --detail: #6f7e71;
-  --gold: #b8895b;
-  --shadow-soft: 0 24px 70px rgb(44 37 35 / 0.12);
+  --background: #f6f8f9;
+  --foreground: #15212a;
+  --card: #ffffff;
+  --card-foreground: #15212a;
+  --muted: #e9f0f2;
+  --muted-foreground: #5f6f78;
+  --border: #d5e0e4;
+  --accent: #9f1d35;
+  --accent-foreground: #ffffff;
+  --accent-soft: #f0d8de;
+  --detail: #1f6370;
+  --gold: #b58d5a;
+  --shadow-soft: 0 24px 70px rgb(21 33 42 / 0.13);
   --font-sans:
     "Inter", "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --font-serif: Georgia, "Times New Roman", serif;
@@ -52,10 +52,10 @@ html {
 body {
   margin: 0;
   background:
-    linear-gradient(90deg, rgb(143 70 87 / 0.025) 1px, transparent 1px),
-    linear-gradient(180deg, rgb(111 126 113 / 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 8% 16%, rgb(159 29 53 / 0.08), transparent 28rem),
+    radial-gradient(circle at 90% 12%, rgb(31 99 112 / 0.08), transparent 30rem),
     var(--background);
-  background-size: 44px 44px, 44px 44px, auto;
+  background-size: auto, auto, auto;
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
@@ -72,7 +72,7 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid rgb(143 70 87 / 0.45);
+  outline: 3px solid rgb(159 29 53 / 0.45);
   outline-offset: 4px;
 }
 
@@ -83,25 +83,24 @@ a {
 
 .hero-surface {
   background:
-    linear-gradient(135deg, rgb(255 253 249 / 0.94), rgb(251 247 242 / 0.84)),
-    linear-gradient(90deg, rgb(143 70 87 / 0.1), transparent 32%),
+    linear-gradient(135deg, rgb(255 255 255 / 0.96), rgb(246 248 249 / 0.82)),
+    linear-gradient(90deg, rgb(159 29 53 / 0.12), transparent 34%),
+    linear-gradient(150deg, transparent 58%, rgb(31 99 112 / 0.12)),
     var(--profile-background);
 }
 
 .fine-lines {
-  background-image:
-    linear-gradient(90deg, rgb(44 37 35 / 0.055) 1px, transparent 1px),
-    linear-gradient(180deg, rgb(44 37 35 / 0.04) 1px, transparent 1px);
-  background-size: 36px 36px;
+  background: linear-gradient(120deg, rgb(159 29 53 / 0.05), transparent 38%),
+    linear-gradient(300deg, rgb(31 99 112 / 0.06), transparent 42%);
 }
 
 .skin-map {
   background:
-    linear-gradient(125deg, rgb(255 253 249 / 0.88), rgb(234 208 210 / 0.42)),
+    linear-gradient(125deg, rgb(255 255 255 / 0.9), rgb(240 216 222 / 0.42)),
     repeating-linear-gradient(
       135deg,
-      rgb(143 70 87 / 0.14) 0,
-      rgb(143 70 87 / 0.14) 1px,
+      rgb(159 29 53 / 0.14) 0,
+      rgb(159 29 53 / 0.14) 1px,
       transparent 1px,
       transparent 20px
     );
@@ -109,9 +108,9 @@ a {
 
 .route-map {
   background:
-    linear-gradient(90deg, rgb(255 253 249 / 0.96), rgb(241 232 223 / 0.74)),
-    linear-gradient(90deg, transparent 48%, rgb(143 70 87 / 0.16) 49% 51%, transparent 52%),
-    linear-gradient(0deg, transparent 38%, rgb(111 126 113 / 0.18) 39% 41%, transparent 42%);
+    linear-gradient(90deg, rgb(255 255 255 / 0.96), rgb(233 240 242 / 0.74)),
+    linear-gradient(90deg, transparent 48%, rgb(159 29 53 / 0.16) 49% 51%, transparent 52%),
+    linear-gradient(0deg, transparent 38%, rgb(31 99 112 / 0.18) 39% 41%, transparent 42%);
 }
 
 .text-balance {

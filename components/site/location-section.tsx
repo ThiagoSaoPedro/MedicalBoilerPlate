@@ -1,19 +1,24 @@
 import { ArrowUpRight, Building2, MapPin } from "lucide-react";
 import type { DoctorProfile } from "@/schemas/doctor-profile";
+import { hasContent } from "@/utils/profile-visibility";
 import { SectionShell } from "./section-shell";
 
 type LocationSectionProps = {
   profile: DoctorProfile;
+  className?: string;
 };
 
-export function LocationSection({ profile }: LocationSectionProps) {
+export function LocationSection({ profile, className }: LocationSectionProps) {
+  const hasMapUrl = hasContent(profile.address.mapUrl);
+  const hasMapEmbedUrl = hasContent(profile.address.mapEmbedUrl);
+
   return (
     <SectionShell
-      className="bg-muted/55"
-      description="Atendimento em endereço público confirmado, com rota aberta diretamente no Google Maps."
+      className={className}
+      description="Endereço público confirmado, com rota e mapa incorporado."
       eyebrow="Onde atender"
       id="onde-atender"
-      title="Atendimento na Clínica CEI, em Fernandópolis."
+      title="Atendimento presencial em localização central."
     >
       <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr]">
         <aside className="flex flex-col justify-between rounded-lg border border-border bg-card p-7 shadow-sm sm:p-8">
@@ -41,26 +46,34 @@ export function LocationSection({ profile }: LocationSectionProps) {
             </div>
           </div>
 
-          <a
-            className="mt-9 inline-flex min-h-12 w-fit items-center justify-center gap-2 rounded-lg bg-[var(--profile-accent)] px-5 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgb(143_70_87_/_0.2)] transition hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--profile-accent)_88%,black)]"
-            href={profile.address.mapUrl}
-            rel="noreferrer"
-            target="_blank"
-          >
-            Ver rota
-            <ArrowUpRight aria-hidden="true" size={17} />
-          </a>
+          {hasMapUrl ? (
+            <a
+              className="mt-9 inline-flex min-h-12 w-fit items-center justify-center gap-2 rounded-lg bg-[var(--profile-accent)] px-5 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgb(143_70_87_/_0.2)] transition hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--profile-accent)_88%,black)]"
+              href={profile.address.mapUrl}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Ver rota
+              <ArrowUpRight aria-hidden="true" size={17} />
+            </a>
+          ) : null}
         </aside>
 
         <div className="relative min-h-[420px] overflow-hidden rounded-lg border border-border bg-card shadow-[var(--shadow-soft)]">
-          <iframe
-            aria-label={`Mapa para ${profile.address.clinic}`}
-            className="absolute inset-0 h-full w-full grayscale-[12%] sepia-[8%]"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            src={profile.address.mapEmbedUrl}
-            title={`Mapa de ${profile.address.clinic}`}
-          />
+          {hasMapEmbedUrl ? (
+            <iframe
+              aria-label={`Mapa para ${profile.address.clinic}`}
+              className="absolute inset-0 h-full w-full grayscale-[12%] sepia-[8%]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src={profile.address.mapEmbedUrl}
+              title={`Mapa de ${profile.address.clinic}`}
+            />
+          ) : (
+            <div className="flex h-full min-h-[420px] items-center justify-center p-8 text-center text-sm font-semibold uppercase text-muted-foreground">
+              Mapa será exibido após inserir a URL de incorporação.
+            </div>
+          )}
           <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/35" />
         </div>
       </div>

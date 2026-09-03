@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { DoctorProfile } from "@/schemas/doctor-profile";
 import { cn } from "@/utils/cn";
+import { hasContent } from "@/utils/profile-visibility";
 
 export type NavigationItem = {
   label: string;
@@ -18,6 +19,7 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ profile, navigation }: SiteHeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const hasSchedulingUrl = hasContent(profile.contact.schedulingUrl);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/80 bg-background/92 backdrop-blur-xl">
@@ -31,7 +33,7 @@ export function SiteHeader({ profile, navigation }: SiteHeaderProps) {
             {profile.shortName}
           </span>
           <span className="mt-1 block text-xs font-medium text-muted-foreground sm:text-sm">
-            Dermatologia & Tricologia
+            {profile.specialty}
           </span>
         </Link>
 
@@ -50,17 +52,19 @@ export function SiteHeader({ profile, navigation }: SiteHeaderProps) {
               </Link>
             ))}
           </nav>
-          <a
-            aria-label="Agendar consulta pelo WhatsApp"
-            className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-[var(--profile-accent)] px-3 py-2.5 text-xs font-bold text-white shadow-[0_10px_24px_rgb(143_70_87_/_0.22)] transition hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--profile-accent)_88%,black)] sm:min-h-11 sm:px-5 sm:py-3 sm:text-sm"
-            href={profile.contact.schedulingUrl}
-            rel="noreferrer"
-            target="_blank"
-          >
-            <MessageCircle aria-hidden="true" className="shrink-0" size={16} />
-            <span className="hidden sm:inline">Agendar Consulta</span>
-            <span className="sm:hidden">Consulta</span>
-          </a>
+          {hasSchedulingUrl ? (
+            <a
+              aria-label="Agendar consulta"
+              className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-[var(--profile-accent)] px-3 py-2.5 text-xs font-bold text-white shadow-[0_10px_24px_rgb(143_70_87_/_0.22)] transition hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--profile-accent)_88%,black)] sm:min-h-11 sm:px-5 sm:py-3 sm:text-sm"
+              href={profile.contact.schedulingUrl}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <MessageCircle aria-hidden="true" className="shrink-0" size={16} />
+              <span className="hidden sm:inline">Agendar Consulta</span>
+              <span className="sm:hidden">Consulta</span>
+            </a>
+          ) : null}
           <button
             aria-controls="mobile-navigation"
             aria-expanded={isOpen}

@@ -10,12 +10,14 @@ const icons: Record<DifferentialIcon, LucideIcon> = {
 
 type DifferentialsSectionProps = {
   profile: DoctorProfile;
+  className?: string;
 };
 
-export function DifferentialsSection({ profile }: DifferentialsSectionProps) {
+export function DifferentialsSection({ profile, className }: DifferentialsSectionProps) {
   return (
     <SectionShell
-      description="Pontos iniciais de posicionamento, mantidos em dados editáveis para revisão comercial e médica."
+      className={className}
+      description="Pontos de posicionamento para uma prática cardiológica clara, técnica e próxima."
       eyebrow="Diferenciais"
       id="diferenciais"
       title="Uma experiência médica construída com critério."

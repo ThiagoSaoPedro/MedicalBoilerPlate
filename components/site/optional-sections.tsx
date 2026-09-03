@@ -3,12 +3,14 @@ import { SectionShell } from "./section-shell";
 
 type OptionalSectionProps = {
   profile: DoctorProfile;
+  className?: string;
 };
 
-export function ServicesSection({ profile }: OptionalSectionProps) {
+export function ServicesSection({ profile, className }: OptionalSectionProps) {
   return (
     <SectionShell
-      description="Serviços só aparecem quando forem preenchidos e revisados no arquivo de dados."
+      className={className}
+      description="Áreas de atendimento cardiológico apresentadas de forma objetiva."
       eyebrow="Serviços"
       id="servicos"
       title="Linhas de cuidado"
@@ -30,9 +32,10 @@ export function ServicesSection({ profile }: OptionalSectionProps) {
   );
 }
 
-export function TestimonialsSection({ profile }: OptionalSectionProps) {
+export function TestimonialsSection({ profile, className }: OptionalSectionProps) {
   return (
     <SectionShell
+      className={className}
       description="Depoimentos só devem ser publicados com autorização expressa."
       eyebrow="Depoimentos"
       id="depoimentos"
@@ -59,10 +62,11 @@ export function TestimonialsSection({ profile }: OptionalSectionProps) {
   );
 }
 
-export function FaqSection({ profile }: OptionalSectionProps) {
+export function FaqSection({ profile, className }: OptionalSectionProps) {
   return (
     <SectionShell
-      description="Perguntas frequentes ficam ocultas até receberem respostas aprovadas."
+      className={className}
+      description="Respostas iniciais para orientar o paciente antes da consulta."
       eyebrow="FAQ"
       id="faq"
       title="Perguntas frequentes"

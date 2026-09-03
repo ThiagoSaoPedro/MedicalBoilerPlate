@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { DoctorProfile } from "@/schemas/doctor-profile";
+import { hasContent } from "@/utils/profile-visibility";
 import { SectionShell } from "./section-shell";
 
 type VisualHealthSectionProps = {
@@ -7,34 +8,41 @@ type VisualHealthSectionProps = {
 };
 
 export function VisualHealthSection({ profile }: VisualHealthSectionProps) {
+  const hasImage = hasContent(profile.visualHealth.image.src);
+
   return (
     <SectionShell
-      className="bg-card/65"
       description={profile.visualHealth.description}
       eyebrow={profile.visualHealth.eyebrow}
-      id="pele-e-cabelo"
+      id="saude-do-coracao"
       title={profile.visualHealth.title}
     >
       <div className="grid items-stretch gap-8 lg:grid-cols-[0.9fr_1fr]">
         <div className="relative min-h-[520px] overflow-hidden rounded-lg border border-border bg-muted shadow-[var(--shadow-soft)] sm:min-h-[620px] lg:min-h-[680px]">
-          <Image
-            alt={profile.visualHealth.image.alt}
-            className="object-cover object-[50%_28%]"
-            fill
-            sizes="(min-width: 1024px) 46vw, 100vw"
-            src={profile.visualHealth.image.src}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/44 via-black/8 to-transparent" />
-          <div className="absolute left-5 top-5 rounded-lg border border-white/40 bg-card/86 px-4 py-3 text-sm font-semibold uppercase text-[var(--profile-accent)] backdrop-blur-md">
-            Medicina capilar
+          {hasImage ? (
+            <Image
+              alt={profile.visualHealth.image.alt}
+              className="object-cover object-[50%_24%]"
+              fill
+              sizes="(min-width: 1024px) 46vw, 100vw"
+              src={profile.visualHealth.image.src}
+            />
+          ) : (
+            <div className="flex h-full min-h-[520px] items-center justify-center text-5xl font-serif text-[var(--profile-accent)] sm:min-h-[620px] lg:min-h-[680px]">
+              {profile.visualHealth.image.fallbackInitials}
+            </div>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/42 via-black/5 to-transparent" />
+          <div className="absolute left-5 top-5 rounded-lg border border-white/40 bg-card/88 px-4 py-3 text-sm font-semibold uppercase text-[var(--profile-accent)] backdrop-blur-md">
+            Cardiologia clínica
           </div>
-          <div className="absolute inset-x-5 bottom-5 rounded-lg border border-white/35 bg-card/90 p-5 backdrop-blur-md sm:p-6">
+          <div className="absolute inset-x-5 bottom-5 rounded-lg border border-white/35 bg-card/92 p-5 backdrop-blur-md sm:p-6">
             <p className="text-xs font-bold uppercase text-[var(--profile-accent)]">
-              cuidado capilar
+              Prevenção cardiovascular
             </p>
             <p className="mt-2 text-pretty text-base leading-7 text-muted-foreground">
-              Imagem real de bastidor profissional, reforçando atenção técnica, precisão e
-              cuidado durante o atendimento.
+              Um cuidado que combina avaliação clínica, exames bem indicados e
+              acompanhamento contínuo.
             </p>
           </div>
         </div>

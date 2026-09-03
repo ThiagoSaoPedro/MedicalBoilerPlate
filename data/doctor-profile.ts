@@ -1,137 +1,168 @@
 import type { DoctorProfile } from "@/schemas/doctor-profile";
 
 export const doctorProfile: DoctorProfile = {
-  professionalName: "Dra. Vitória Ruvieri Silveira",
-  shortName: "Dra. Vitória",
-  crm: "CRM-SP 202273",
-  city: "Fernandópolis, SP",
-  // Validar com a cliente antes da publicação final. Não publicar RQE sem confirmação formal.
-  specialty: "Dermatologia e Medicina Capilar",
+  professionalName: "Dr. Rafael Almeida Cardoso",
+  shortName: "Dr. Rafael",
+  crm: "CRM-SP 145890",
+  city: "São Paulo, SP",
+  specialty: "Cardiologia Clínica e Preventiva",
   specialtyValidationNote:
-    "Validar especialidade, RQE e forma de apresentação profissional com a cliente antes da publicação.",
+    "Informações fictícias para demonstração. Substitua por CRM, RQE e especialidade confirmados antes da publicação.",
   tagline:
-    "Diagnóstico preciso e cuidado personalizado para a saúde da pele e dos cabelos.",
+    "Cuidado cardiológico claro, preventivo e atento ao ritmo de vida de cada paciente.",
   institutionalCall:
-    "Cuidado médico com escuta, embasamento científico e tecnologias atuais em Fernandópolis.",
+    "Avaliação cardiovascular completa, escuta cuidadosa e acompanhamento próximo para decisões mais seguras sobre a saúde do coração.",
   approvedBaseText:
-    "Diagnóstico preciso. Tratamentos personalizados, embasamento científico, medicina regenerativa. Resultados que transformam. Devolvendo autoestima através da saúde dos seus cabelos. Tecnologias e tudo de mais inovador você encontra aqui!",
+    "Cardiologia com foco em prevenção, diagnóstico preciso e acompanhamento contínuo. Um cuidado humano para proteger o coração em todas as fases da vida.",
   biography: [
-    "Atendimento voltado para dermatologia e medicina capilar, com avaliação individualizada e uma condução cuidadosa de cada queixa.",
-    "A proposta é unir escuta, ciência e tecnologia para orientar escolhas terapêuticas com clareza, segurança e respeito ao tempo de cada paciente.",
+    "O Dr. Rafael Almeida Cardoso atua em cardiologia clínica com foco em prevenção, investigação de sintomas e acompanhamento de fatores de risco cardiovascular.",
+    "Sua abordagem combina conversa detalhada, análise criteriosa de exames e orientação prática para que cada paciente compreenda melhor sua saúde e participe das decisões de cuidado.",
   ],
   photo: {
-    src: "/images/dra-vitoria-ruvieri.jpg",
-    alt: "Retrato profissional da Dra. Vitória Ruvieri Silveira",
-    fallbackInitials: "VR",
+    src: "/images/medico.jpg",
+    alt: "Retrato profissional do Dr. Rafael Almeida Cardoso",
+    fallbackInitials: "RA",
   },
   colors: {
-    background: "#fbf7f2",
-    foreground: "#2c2523",
-    accent: "#8f4657",
-    accentSoft: "#ead0d2",
-    detail: "#6f7e71",
+    background: "#f6f8f9",
+    foreground: "#15212a",
+    accent: "#9f1d35",
+    accentSoft: "#f0d8de",
+    detail: "#1f6370",
   },
   address: {
-    clinic: "Clínica CEI",
-    streetAddress: "Rua Sergipe, 908, Sala 3, Centro",
-    city: "Fernandópolis - SP",
+    clinic: "Instituto CardioVita",
+    streetAddress: "Av. Paulista, 1842, 12º andar, Bela Vista",
+    city: "São Paulo - SP",
     mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Rua%20Sergipe%2C%20908%2C%20Sala%203%2C%20Centro%2C%20Fernand%C3%B3polis%20-%20SP",
+      "https://www.google.com/maps/search/?api=1&query=Av.%20Paulista%2C%201842%2C%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP",
     mapEmbedUrl:
-      "https://www.google.com/maps?q=Rua%20Sergipe%2C%20908%2C%20Sala%203%2C%20Centro%2C%20Fernand%C3%B3polis%20-%20SP&output=embed",
+      "https://www.google.com/maps?q=Av.%20Paulista%2C%201842%2C%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP&output=embed",
   },
   availability: {
-    whatsappCommercialAvailability: "24 horas, todos os dias",
+    whatsappCommercialAvailability: "Segunda a sexta, das 8h às 18h",
     displayText:
-      "O canal comercial foi informado como disponível 24 horas, todos os dias.",
-    note: "O número de WhatsApp deve ser inserido somente após confirmação final.",
+      "A equipe comercial responde solicitações de consulta, retornos e dúvidas administrativas em horário comercial.",
+    note: "Informe o número de WhatsApp definitivo antes da publicação.",
   },
   contact: {
-    instagramUrl: "https://www.instagram.com/dravitoriaruvieri/",
-    whatsappNumber: "",
-    email: "",
+    instagramUrl: "https://www.instagram.com/drrafaelcardio/",
+    whatsappNumber: "5511999990000",
+    email: "contato@drrafaelcardio.com.br",
     schedulingUrl:
-      "https://api.whatsapp.com/send?phone=5517997843429&text=Ol%C3%A1%2C%20vim%20do%20Instagram%20e%20gostaria%20de%20agendar%20uma%20consulta.%20",
+      "https://api.whatsapp.com/send?phone=5511999990000&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20cardiol%C3%B3gica.",
   },
   officeHours: {
-    publicLabel: "",
-    items: [],
-    showOnSite: false,
+    publicLabel: "Atendimento com hora marcada",
+    items: ["Segunda a sexta, das 8h às 18h", "Sábados alternados pela manhã"],
+    showOnSite: true,
   },
   care: {
-    eyebrow: "Um cuidado individualizado",
-    title: "Avaliação atenta para escolhas mais precisas.",
+    eyebrow: "Cardiologia preventiva",
+    title: "Cuidado para entender riscos, sintomas e próximos passos.",
     description:
-      "A jornada começa pela compreensão da história, das queixas e dos objetivos de cada pessoa.",
+      "Uma jornada de avaliação cardiovascular pensada para unir prevenção, clareza e acompanhamento responsável.",
     paragraphs: [
-      "O texto-base aprovado aponta uma prática guiada por diagnóstico preciso, tratamentos personalizados, embasamento científico e uso criterioso de tecnologias.",
-      "Na comunicação do site, essa mensagem foi construída sem prometer desfechos clínicos: o foco está em cuidado, orientação médica, autoestima e saúde dos cabelos.",
+      "A consulta parte da história clínica, rotina, antecedentes familiares, pressão arterial, exames prévios e objetivos de saúde do paciente.",
+      "A comunicação evita alarmismo e promessas: o foco está em explicar riscos, organizar prioridades e acompanhar mudanças possíveis com consistência.",
     ],
   },
   visualHealth: {
-    eyebrow: "Pele e saúde capilar",
-    title: "Tecnologia e ciência a favor de um cuidado mais claro.",
+    eyebrow: "Saúde do coração",
+    title: "Prevenção cardiovascular com método, dados e escuta.",
     description:
-      "Uma apresentação visual leve, sem imagens invasivas, para reforçar investigação, prevenção e acompanhamento.",
+      "A seção visual reforça a ideia de precisão clínica, monitoramento e cuidado contínuo.",
     image: {
-      src: "/images/foto.jpg",
-      alt: "Dra. Vitória durante procedimento de cuidado capilar em consultório",
-      fallbackInitials: "VR",
+      src: "/images/medico.jpg",
+      alt: "Cardiologista em retrato profissional com estetoscópio",
+      fallbackInitials: "RA",
     },
     topics: [
       {
         label: "01",
-        title: "Investigação",
+        title: "Estratificação de risco",
         description:
-          "Leitura cuidadosa dos sinais da pele e do couro cabeludo antes de qualquer conduta.",
+          "Análise de pressão, colesterol, histórico familiar, hábitos e exames para entender o risco cardiovascular.",
       },
       {
         label: "02",
-        title: "Personalização",
+        title: "Investigação de sintomas",
         description:
-          "Planejamento ajustado à história, rotina e necessidades apresentadas em consulta.",
+          "Avaliação cuidadosa de dor no peito, palpitações, falta de ar, tonturas e cansaço aos esforços.",
       },
       {
         label: "03",
-        title: "Acompanhamento",
+        title: "Plano de acompanhamento",
         description:
-          "Orientação contínua para decisões mais seguras ao longo do tratamento médico.",
+          "Orientações práticas, metas realistas e seguimento para prevenção e controle de condições crônicas.",
       },
     ],
   },
   differentials: [
     {
       icon: "heartPulse",
-      title: "Cuidado individualizado",
+      title: "Prevenção personalizada",
       description:
-        "Escuta, avaliação e comunicação pensadas para acolher a história de cada paciente.",
+        "Condutas ajustadas ao perfil de risco, histórico familiar, rotina e exames de cada paciente.",
     },
     {
       icon: "microscope",
-      title: "Embasamento científico",
+      title: "Decisões baseadas em dados",
       description:
-        "Condutas orientadas por critérios médicos, evidências e atualização profissional.",
+        "Integração de avaliação clínica e exames complementares para orientar próximos passos com clareza.",
     },
     {
       icon: "sparkles",
-      title: "Tecnologia com propósito",
+      title: "Linguagem acessível",
       description:
-        "Recursos e abordagens atuais usados de forma criteriosa, conforme indicação médica.",
+        "Explicações objetivas sobre diagnóstico, prevenção e tratamento, sem perder o rigor técnico.",
     },
   ],
-  services: [],
+  services: [
+    {
+      title: "Consulta cardiológica",
+      description:
+        "Avaliação clínica completa para prevenção, sintomas cardiovasculares e acompanhamento de rotina.",
+    },
+    {
+      title: "Controle de pressão arterial",
+      description:
+        "Investigação, orientação e seguimento para hipertensão e fatores associados.",
+    },
+    {
+      title: "Check-up cardiovascular",
+      description:
+        "Organização de exames e metas preventivas conforme idade, histórico e perfil de risco.",
+    },
+  ],
   testimonials: [],
-  faq: [],
+  faq: [
+    {
+      question: "Quando procurar um cardiologista?",
+      answer:
+        "É indicado buscar avaliação diante de sintomas como dor no peito, palpitações, falta de ar, pressão alta ou histórico familiar de doença cardiovascular.",
+    },
+    {
+      question: "A consulta serve para prevenção?",
+      answer:
+        "Sim. A cardiologia preventiva ajuda a identificar fatores de risco e organizar cuidados antes que problemas maiores apareçam.",
+    },
+    {
+      question: "Quais exames podem ser solicitados?",
+      answer:
+        "A indicação depende da avaliação clínica. Podem ser considerados exames laboratoriais, eletrocardiograma, teste ergométrico, ecocardiograma ou monitorizações.",
+    },
+  ],
   sections: {
     hero: true,
     care: true,
     visualHealth: true,
     differentials: true,
     location: true,
-    availability: false,
-    services: false,
+    availability: true,
+    services: true,
     testimonials: false,
-    faq: false,
-    finalCta: false,
+    faq: true,
+    finalCta: true,
   },
 };
